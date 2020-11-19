@@ -61,15 +61,10 @@
 
    
   <script>
-    // const modal = document.querySelector("#modal")
-    // // $( document).ready(function() {
-    //   setTimeout(function(){
-    //     modal.style.display = "block";
-    //     // $( "#modal" ).slideUp();
-    //   }, 2000);
-    // });
+    const modal = document.querySelector("#modal")
+
     if (localStorage.getItem('claimed')){
-      console.log("Elisheva")
+      modal.style.display = "none"
     }
     const closeButton = document.querySelector("#close")
     const claimButton = document.querySelector("#claim")
