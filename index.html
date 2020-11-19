@@ -68,11 +68,20 @@
     //     // $( "#modal" ).slideUp();
     //   }, 2000);
     // });
-
-    const button = document.querySelector("#close")
-    button.addEventListener("click", () => {
+    if (localStorage.getItem('claimed')){
+      console.log("Elisheva")
+    }
+    const closeButton = document.querySelector("#close")
+    const claimButton = document.querySelector("#claim")
+    closeButton.addEventListener("click", () => {
       console.log("click")
       modal.style.display = "none";
+    })
+
+    claimButton.addEventListener("click", () => {
+      //slide down
+      console.log("hello")
+      localStorage.setItem('claimed', true);
     })
 
     
