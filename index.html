@@ -14,16 +14,6 @@
       height: 400px;
     }
 
-    .slider {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow: hidden;
-    background-color: #000; color: #FFF;
-    transition: all 1s;
-  }
-
   #claim{
     color:coral;
     background:white;
@@ -38,7 +28,19 @@
     width:60%;
     left:20%;
     animation-name:slideup;
-    animation-delay:2s;
+    animation-delay:5s;
+    animation-duration:0.8s;
+    animation-fill-mode:forwards;
+    animation-timing-function:ease-out;
+  }
+
+  .slidemedown{
+    position:absolute;
+    bottom:0px;;
+    height:400px;
+    width:60%;
+    left:20%;
+    animation-name:slidedown;
     animation-duration:0.8s;
     animation-fill-mode:forwards;
     animation-timing-function:ease-out;
@@ -48,6 +50,12 @@
     0%{bottom:-400px}
     100%{bottom:0;}
   }
+
+  @keyframes slidedown {
+    0%{bottom:0}
+    100%{bottom:-400px;}
+  }
+  
     </style>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
   </head>
@@ -75,9 +83,9 @@
     })
 
     claimButton.addEventListener("click", () => {
-      //slide down
-      console.log("hello")
       localStorage.setItem('claimed', true);
+      modal.classList.toggle('slidemeup')
+      modal.classList.toggle('slidemedown')
     })
 
     
